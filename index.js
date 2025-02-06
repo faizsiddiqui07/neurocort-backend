@@ -13,16 +13,16 @@ const port = process.env.port || 8000;
 
 app.use(express.json());
 app.use(cookieParser())
-app.use("/files", express.static("files")); 
+app.use("/files", express.static("files"));
 
-if (process.env.mode === 'production') {
-    app.use(cors())
-} else {
-    app.use(cors({
-        origin: ["http://localhost:5174", "http://localhost:5173"],
-        credentials: true,
-    }))
-}
+app.get('/', (req, res) => {
+    res.send('Hello from backend!');
+});
+
+app.use(cors({
+    origin: ["http://localhost:5174", "http://localhost:5173"],
+    credentials: true,
+}))
 
 app.use(session({
     secret: "erjgqrg5ergwgwt2hw5twjgh534BjugKJ", //Random key
