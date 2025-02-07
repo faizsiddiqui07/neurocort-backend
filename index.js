@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(cors({
-    origin: ["http://localhost:5174", "http://localhost:5173","https://main.d2cghyaxin2ydo.amplifyapp.com/"],
+    origin: ["http://localhost:5174", "http://localhost:5173","https://neurocort.com"],
     credentials: true,
 }))
 
